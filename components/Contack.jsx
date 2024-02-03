@@ -5,7 +5,7 @@ const Contact = () => {
     <>
       <section
         name="contact"
-        className="relative z-10 overflow-hidden bg-white dark:bg-dark lg:py-[120px] w-11/12"
+        className="relative flex justify-center ite z-10 overflow-hidden bg-white dark:bg-dark lg:py-[120px] w-full"
       >
         <div className="container w-11/12">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
