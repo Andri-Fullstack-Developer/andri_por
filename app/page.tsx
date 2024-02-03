@@ -8,12 +8,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="h-screen">
-        <Hero />
-      </div>
-      <div className="h-screen">
-        <About />
-      </div>
+      <Hero />
+      <About />
       <div className="h-screen">
         <Services />
       </div>

@@ -1,6 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+.font-header {
+  font-family: "Raleway", sans-serif;
+}
+
+@keyframes bounceLeftRight {
+  0%,
+  100% {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+}
+
+.animate-bounce-left-right-infinite {
+  animation: bounceLeftRight 5s ease-in-out infinite;
+}
+
+@keyframes bounceTopButton {
+  0%,
+  100% {
+    transform: translateX(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+}
+}
+
+.animate-bounce-top-button-infinit{
+  animation: bounceTopButton 5s ease-in-out infinite;
+  -webkit-animation: bounceTopButton 5s ease-in-out infinite;
+}
+
 /* 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -31,7 +79,6 @@ body {
     text-wrap: balance;
   }
 } */
-
 
 /* .texta{
   object-fit: cover;
