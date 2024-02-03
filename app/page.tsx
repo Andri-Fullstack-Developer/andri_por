@@ -10,9 +10,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <div className="h-screen">
-        <Services />
-      </div>
+      <Services />
       <div className="h-screen">
         <Contack />
       </div>

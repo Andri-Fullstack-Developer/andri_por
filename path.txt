@@ -1,0 +1,26 @@
+ <div
+            className="w-80 h-80 flex  flex-col justify-center items-center border-2 border-[#0076b65e] rounded-md p-5 shadow-2xl hover:bg-[#0077b6] hover:text-white"
+            onMouseEnter={() => setIsHoverRed1(true)}
+            onMouseLeave={() => setIsHoverRed1(false)}
+          >
+            <figure className="p-2 ">
+              <Image
+                src={`/images/svg/icon-development-${
+                  isHoverRed1 ? "white" : "black"
+                }.svg`}
+                width={150}
+                height={150}
+                alt="Shoes"
+                className="rounded-xl"
+                onMouseEnter={() => setIsHoverRed1(true)}
+                onMouseLeave={() => setIsHoverRed1(false)}
+              />
+            </figure>
+            <div className="card-body items-center text-center">
+              <h2 className="font-bold text-lg">WEB DEVELOPMENT!</h2>
+              <p className="font-medium">
+                Discover the exciting world of web development and unleash the
+                power of coding!
+              </p>
+            </div>
+          </div>

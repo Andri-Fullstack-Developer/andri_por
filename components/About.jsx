@@ -11,12 +11,12 @@ function About() {
   return (
     <Element
       id="about"
-      className="mt-20 lg:mt-5 h-screen flex flex-col  justify-center items-center gap-4"
+      className="mt-24 lg:mt-10 h-screen flex flex-col  justify-center items-center gap-2"
     >
       <h1 className=" text-3xl ms:text-4xl lg:text-4xl font-bold p-2 mt-2 border-[#0077b6] border-b-4">
         About
       </h1>
-      <div className="w-11/12 flex flex-col-reverse mt-10 md:mt-0 lg:mt-0  md:flex-row gap-4 justify-center items-center">
+      <div className="w-11/12 flex flex-col-reverse  md:mt-0 lg:mt-0  md:flex-row gap-4 justify-center items-center">
         <div className="w-full text-center md:text-left ">
           <h1
             className="text-[#0077b6] text-3xl md:text-4xl lg:text-5xl font-bold mb-2 "
