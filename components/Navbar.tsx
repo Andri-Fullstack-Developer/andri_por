@@ -17,6 +17,7 @@ function Navbar() {
     { label: "Home", to: "home" },
     { label: "About", to: "about" },
     { label: "Services", to: "services" },
+    { label: "Portofolio", to: "portofolio" },
     { label: "Contact", to: "contact" },
   ];
 
@@ -62,7 +63,10 @@ function Navbar() {
             >
               <span className="sr-only">Open main menu</span>
 
-              <div className=" text-3xl item-center gap-3" onClick={handleClick}>
+              <div
+                className=" text-3xl item-center gap-3"
+                onClick={handleClick}
+              >
                 {isOpen ? <MdOutlineClose /> : <IoReorderThreeOutline />}
               </div>
             </button>
@@ -83,7 +87,9 @@ function Navbar() {
                     offset={50}
                     duration={500}
                     className={`p-0 mt-0 ${
-                      activeLink === link.to ? "text-red-500 dark:text-black" : "text-white"
+                      activeLink === link.to
+                        ? "text-red-500 dark:text-black"
+                        : "text-white"
                     } rounded md:bg-transparent md:p-0 cursor-pointer`}
                     onClick={handleLinkClick}
                   >

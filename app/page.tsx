@@ -2,6 +2,7 @@ import Hero from "@/components/Home";
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Portofolio from "@/components/Portofolio";
 import Contack from "@/components/Contack";
 
 export default function Home() {
@@ -11,9 +12,8 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <div className="h-screen">
-        <Contack />
-      </div>
+      <Portofolio />
+      <Contack />
     </>
   );
 }

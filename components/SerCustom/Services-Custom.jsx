@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 function ServicesCustom() {
   const serviList = [
@@ -38,6 +39,8 @@ function ServicesCustom() {
   const [hoverStatus, setHoverStatus] = useState(
     Array(serviList.length).fill(false)
   );
+  const { theme } = useTheme();
+
 
   const handleHover = (index, isHovered) => {
     const newHoverStatus = [...hoverStatus];
@@ -50,34 +53,34 @@ function ServicesCustom() {
       {serviList.map((data, i) => (
         <div
           key={i}
-          className="w-80 h-80 flex  flex-col justify-center items-center border-2 border-[#0076b65e] rounded-md p-5 shadow-2xl hover:bg-[#0077b6] hover:text-white"
+          className="w-[150px] h-[150px] md:w-[270px] md:h-[270px] lg:w-80 lg:h-80 flex  flex-col justify-center items-center border-2 border-[#0076b65e] rounded-md p-5 shadow-2xl hover:bg-[#0077b6] hover:text-white"
           onMouseEnter={() => handleHover(i, true)}
           onMouseLeave={() => handleHover(i, false)}
         >
           <figure className="p-2 ">
             <Image
-              src={hoverStatus[i] ? data.foto1 : data.foto2}
+              src={hoverStatus[i] ? (theme === "dark" ? data.foto2 : data.foto1) : (theme === "dark" ? data.foto1 : data.foto2)}
               width={150}
               height={150}
               alt="Shoes"
-              className="rounded-xl"
+              className="rounded-xl w-[50px] md:w-[100px] md:h-[100px] lg:w-[150px] lg:md-[150px]"
               onMouseEnter={() => handleHover(i, true)}
               onMouseLeave={() => handleHover(i, false)}
             />
           </figure>
           <div className="card-body items-center text-center ">
             <h2
-              className={`font-bold text-lg ${
+              className={`font-bold text-[10px] md:text-lg ${
                 hoverStatus[i] ? "text-white" : "text-[#0077b6]"
               }`}
             >
               {data.heding}
             </h2>
-            <p className="font-medium">{data.des}</p>
+            <p className="font-medium text-[8px] md:text-[15px]">{data.des}</p>
           </div>
         </div>
       ))}
-      ;
+      
     </>
   );
 }

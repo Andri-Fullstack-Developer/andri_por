@@ -5,7 +5,7 @@ const Contact = () => {
     <>
       <section
         name="contact"
-        className="relative flex justify-center ite z-10 overflow-hidden bg-white dark:bg-dark lg:py-[120px] w-full"
+        className="relative flex justify-center ite z-10 overflow-hidden bg-white dark:bg-dark lg:py-[120px] w-full"cls
       >
         <div className="container w-11/12">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
@@ -159,7 +159,7 @@ const Contact = () => {
                         fillRule="evenodd"
                         clipRule="evenodd"
                         d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z"
-                        fill="#3056D3"
+                        fill="#0077b6"
                       />
                     </svg>
                   </span>
