@@ -153,7 +153,7 @@ function PortoModal() {
             </button>
           </div>
           <Image
-            src={imageList[selectedImage]?.dataimg1 || ''}
+            src={imageList[selectedImage]?.dataimg || ''}
             width={600}
             height={500}
             alt={imageList[selectedImage]?.dataalt || ''}
