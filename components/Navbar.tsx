@@ -16,6 +16,7 @@ function Navbar() {
   const navLinks = [
     { label: "Home", to: "home" },
     { label: "About", to: "about" },
+    { label: "Skills", to: "skills" },
     { label: "Services", to: "services" },
     { label: "Portofolio", to: "portofolio" },
     { label: "Contact", to: "contact" },

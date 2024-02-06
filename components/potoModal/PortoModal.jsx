@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { IoCloseSharp } from "react-icons/io5";
 import Modal from "react-modal";
-
+import { Background } from "@tsparticles/engine";
 
 const imageList = [
   {
@@ -82,6 +82,11 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     width: "40%",
   },
+  "@media only screen and (max-width: 600px)": {
+    content: {
+      width: "80%",
+    },
+  },
 };
 
 function PortoModal() {
@@ -142,7 +147,7 @@ function PortoModal() {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
           <div className="flex justify-between bg-[#0077b6] text-white font-bold rounded-lg p-2 mb-2">
             <Image src={"/Ar.svg"} width={25} height={100} alt="logo" />
             <h1 className=" text-lx md:text-2xl ">
@@ -153,10 +158,10 @@ function PortoModal() {
             </button>
           </div>
           <Image
-            src={imageList[selectedImage]?.dataimg || ''}
+            src={imageList[selectedImage]?.dataimg || ""}
             width={600}
             height={500}
-            alt={imageList[selectedImage]?.dataalt || ''}
+            alt={imageList[selectedImage]?.dataalt || ""}
           />
         </div>
       </Modal>
