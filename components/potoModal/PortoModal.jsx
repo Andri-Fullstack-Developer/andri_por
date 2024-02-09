@@ -4,73 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { IoCloseSharp } from "react-icons/io5";
 import Modal from "react-modal";
-import { Background } from "@tsparticles/engine";
-
-const imageList = [
-  {
-    dataalt: "Portofoli 1",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/25/04/55/cat-7544821_960_720.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 2",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 3",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 4",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 5",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 6",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 7",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 8",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-  {
-    dataalt: "Portofoli 9",
-    dataimg:
-      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
-    dataheading: "Kucing",
-    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
-  },
-];
+import axios from "axios";
 
 const customStyles = {
   content: {
@@ -80,19 +14,37 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    width: "40%",
+   
   },
-  "@media only screen and (max-width: 600px)": {
-    content: {
-      width: "80%",
-    },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.5)",
   },
+};
+
+customStyles.content["@media only screen and (max-width: 600px)"] = {
+  width: "100%%",
 };
 
 function PortoModal() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const subtitle = useRef(null);
+  const [imageList, setImageList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:1337/api/portofolios?populate=*"
+        );
+        setImageList(response.data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   function openModal(index) {
     setSelectedImage(index);
@@ -118,23 +70,32 @@ function PortoModal() {
 
   return (
     <>
-      {displayedImages.map((data, i) => (
+      {imageList.map((data, i) => (
         <div
           key={i}
-          className="w-[300px] h-[205spx] bg-red-300 rounded-md cursor-pointer"
+          className="w-[300px] h-[205px] bg-red-300 rounded-md cursor-pointer"
           onClick={() => openModal(i)}
         >
-          <figure className="relative">
+          <figure
+            className="relative"
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "relative",
+              overflow: "hidden",
+              borderRadius: "8px",
+            }}
+          >
             <Image
-              src={data.dataimg}
+              src={`http://localhost:1337${data.attributes.pickers.data[0]?.attributes.url}`}
               width={300}
               height={200}
               alt={data.dataalt}
               className="rounded-md"
             />
             <div className="bg-gray-100 opacity-0 hover:opacity-70 w-full h-full text-center absolute top-0 left-0 flex flex-col justify-center items-center">
-              <h1 className="text-xl font-bold">{data.dataheading}</h1>
-              <p>{data.datades}</p>
+              <h1 className="text-xl font-bold">{data.attributes.judul}</h1>
+              <p>{data.attributes.diskripsi}</p>
             </div>
           </figure>
         </div>
@@ -151,18 +112,20 @@ function PortoModal() {
           <div className="flex justify-between bg-[#0077b6] text-white font-bold rounded-lg p-2 mb-2">
             <Image src={"/Ar.svg"} width={25} height={100} alt="logo" />
             <h1 className=" text-lx md:text-2xl ">
-              {imageList[selectedImage]?.dataheading || ""}
+              {imageList[selectedImage]?.attributes.judul || ""}
             </h1>
             <button onClick={closeModal} className="text-lg md:text-2xl">
               <IoCloseSharp />
             </button>
           </div>
-          <Image
-            src={imageList[selectedImage]?.dataimg || ""}
-            width={600}
-            height={500}
-            alt={imageList[selectedImage]?.dataalt || ""}
-          />
+          {imageList[selectedImage] && (
+            <Image
+              src={`http://localhost:1337${imageList[selectedImage]?.attributes.pickers.data[0]?.attributes.url}`}
+              width={600}
+              height={500}
+              alt={imageList[selectedImage]?.dataalt || ""}
+            />
+          )}
         </div>
       </Modal>
     </>

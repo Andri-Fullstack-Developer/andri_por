@@ -11,7 +11,7 @@ function Services() {
     <>
       <div
         id="services"
-        className="mt-12 lg:mt-0 flex justify-center  items-center  "
+        className="mt-24 md:mt-10 lg:mt-10 flex justify-center  items-center  "
       >
         <div className="w-11/12 flex flex-col justify-center items-center mt-3 mb-10">
           <div className="flex flex-col items-center mt-3 md:mt-0 lg:mt-0 mb-3">

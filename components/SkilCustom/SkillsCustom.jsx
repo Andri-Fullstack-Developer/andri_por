@@ -35,7 +35,7 @@ function SkillsCustom({ onButtonClick }) {
       {SkillsList.map((data, i) => (
         <div
           key={i}
-          className="w-5/12 h-24 relative transition delay-150 duration-300 ease-in-out hover:-translate-y-2 font-medium text-lg "
+          className="w-5/12 h-[14vh] relative transition delay-150 duration-300 ease-in-out hover:-translate-y-2 font-medium text-lg "
         >
           <Image
             src={data.SkIcon}
@@ -47,7 +47,7 @@ function SkillsCustom({ onButtonClick }) {
           <div className="flex w-full h-full p-[24px] justify-center items-center">
             <button
               className={`w-full h-full border-2 border-[#0077b6] rounded-xl hover:bg-[#0077b6] hover:text-white ${
-                activeSkill === data.SkText.toLowerCase() 
+                activeSkill === data.SkText.toLowerCase()
                   ? "bg-[#0077b6] text-white"
                   : ""
               }`}

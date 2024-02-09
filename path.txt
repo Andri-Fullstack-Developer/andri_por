@@ -24,3 +24,73 @@
               </p>
             </div>
           </div>
+
+
+          /// potofolioo'
+
+
+          const imageList = [
+  {
+    dataalt: "Portofoli 1",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/25/04/55/cat-7544821_960_720.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 2",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 3",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 4",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 5",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 6",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 7",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 8",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+  {
+    dataalt: "Portofoli 9",
+    dataimg:
+      "https://cdn.pixabay.com/photo/2022/10/19/22/15/cat-7533717_1280.jpg",
+    dataheading: "Kucing",
+    datades: "Anda seharusnya tidak lagi mendapatkan kesalahan tersebut",
+  },
+];

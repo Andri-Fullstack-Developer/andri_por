@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { MdOutlineClose } from "react-icons/md";
@@ -18,7 +19,15 @@ function Navbar() {
     { label: "About", to: "about" },
     { label: "Skills", to: "skills" },
     { label: "Services", to: "services" },
-    { label: "Portofolio", to: "portofolio" },
+    {
+      label: "Portofolio",
+      to: "portofolio",
+      subPages: [
+        { label: "Project 1", to: "project1" },
+        { label: "Project 2", to: "project2" },
+        // Add more sub-pages as needed
+      ],
+    },
     { label: "Contact", to: "contact" },
   ];
 

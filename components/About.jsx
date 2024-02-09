@@ -11,7 +11,7 @@ function About() {
   return (
     <Element
       id="about"
-      className="mt-24 lg:mt-10 h-screen flex flex-col  justify-center items-center gap-2"
+      className="mt-24 -md:mt-16 lg:mt-10 flex flex-col  justify-center items-center gap-2"
     >
       <h1 className=" text-3xl ms:text-4xl lg:text-4xl font-bold p-2 mt-2 border-[#0077b6] border-b-4">
         About

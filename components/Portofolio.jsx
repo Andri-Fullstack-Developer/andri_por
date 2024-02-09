@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import PortoModal from "./potoModal/PortoModal";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa6";
-// import ListPortofolio from '@/app/pages/portofolio/page'
+
 
 function Portofolio() {
   return (
@@ -11,7 +11,7 @@ function Portofolio() {
       <div
         id="portofolioApp"
         name="portofolio"
-        className=" flex justify-center items-center"
+        className="mt-24 md:mt-10 lg:mt-10 flex justify-center items-center"
       >
         <div className="w-11/12 h-full flex flex-col justify-center items-center ">
           <div className="flex flex-col items-center mt-3 md:mt-0 lg:mt-0 mb-3">
